@@ -59,8 +59,12 @@ class App extends Component {
     .catch((err) => console.log(err.response.data) );
   }
 
-  showTagForm= () => {
+  showTagForm = () => {
     this.setState({ newTag: true });
+  }
+
+  closeTagForm = () => {
+    this.setState({ newTag: false });
   }
 
   render() {
@@ -75,6 +79,7 @@ class App extends Component {
             submitNote={this.submitNote}
             showTagForm={this.showTagForm}
             newTag={newTag}
+            closeTagForm={this.closeTagForm}
           /> 
           :
           <List
